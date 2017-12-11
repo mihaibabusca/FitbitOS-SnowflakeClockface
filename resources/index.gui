@@ -1,0 +1,27 @@
+<svg class="background">
+
+  <defs>
+    <symbol id="snowflake">
+      <image id="image" href="flake1.png"/>
+       <animate attributeName="y" begin="enable" from="-50" to="90%" dur="5" final="restore" easing="ease" repeatCount="indefinite" />
+       <animate attributeName="opacity"  begin="enable" from="1" to="0" dur="5" final="freeze" easing="ease" repeatCount="indefinite"/>
+    </symbol>
+  </defs>
+  <image id="bgImage" href="1.jpg" width="100%" height="100%"/>
+  
+ <use href="#snowflake" id="flake0"/>
+ <use href="#snowflake" id="flake1"/>
+ <use href="#snowflake" id="flake2"/>
+ <use href="#snowflake" id="flake3"/>
+ <use href="#snowflake" id="flake4"/>
+ <use href="#snowflake" id="flake5"/>
+ <use href="#snowflake" id="flake6"/>
+ <use href="#snowflake" id="flake7"/>
+ <use href="#snowflake" id="flake8"/>
+ <use href="#snowflake" id="flake9"/>
+ <use href="#snowflake" id="flake10"/>
+ <text id="timeLabelShadow" />
+ <text id="timeLabel"  pointer-events="visible"/>
+ <text id="dateLabelShadow" />
+ <text id="dateLabel" />
+</svg>

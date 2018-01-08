@@ -4,6 +4,7 @@ import document from "document";
 import * as util from "../common/utils";
 
 import locale from "user-settings";
+import { display } from "display";
 
 // Update the clock every minute
 clock.granularity = "minutes";
@@ -46,17 +47,28 @@ timeLabel.onclick = function(e) {
   randomizeBg();
 }
 
-for (var i=0; i<=10; i++) {
-  var flake = document.getElementById("flake" + i);
-  flake.y = -50;
-  flake.x =  Math.floor((Math.random() * 280) + 10);
-  flake.getElementById("image").href = "flake" + Math.floor((Math.random() * 3) + 1) + ".png";
-  
-  let size = Math.floor((Math.random() * 30) + 20);
-  flake.width = size;
-  flake.height = size;
+display.onchange = function() { 
+  if (display.on) {
+    startSnowing();
+  }
+}
 
-  startAnimation(i);
+startSnowing();
+
+function startSnowing() {
+  // console.log("Start snowing");
+  for (var i=0; i<=10; i++) {
+    var flake = document.getElementById("flake" + i);
+    flake.y = -50;
+    flake.x = Math.floor((Math.random() * 280) + 10);
+    flake.getElementById("image").href = "flake" + Math.floor((Math.random() * 3) + 1) + ".png";
+
+    let size = Math.floor((Math.random() * 30) + 20);
+    flake.width = size;
+    flake.height = size;
+
+    startAnimation(i);
+  }
 }
 
 function randomStartTime() {
